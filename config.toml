@@ -6,7 +6,7 @@ theme = "hugo-elate-theme"
 
 [params]
   
-  custom_css = ["css/custom1.css", "css/custom2.css"]
+  custom_css = ["/css/custom1.css", "/css/custom2.css"]
 
   # Meta
   author = ""
@@ -20,33 +20,39 @@ theme = "hugo-elate-theme"
 	
 [[menu.main]]
     name = "Home"
-    url = "#"
+    url = "/"
     weight = 1
     identifier = "home"
 
 [[menu.main]]
     name = "Claratti Cloud"
-    url = "#"
+    url = "/claratti-cloud/"
     weight = 2
     identifier = "claratti-cloud"
 
 [[menu.main]]
     name = "lms"
-    url = "#"
+    url = "/ims/"
     weight = 3
     identifier = "lms"
 
 [[menu.main]]
     name = "Appointment"
-    url = "#"
+    url = "/appointment/"
     weight = 4
     identifier = "appointment"
 
 [[menu.main]]
     name = "Projectisago"
-    url = "#"
+    url = "/piago/"
     weight = 4
-    identifier = "projectisago"
+    identifier = "piago"
+
+[[menu.main]]
+    name = "Contact"
+    url = "/Contact/"
+    weight = 5
+    identifier = "contact"
   
   
   
@@ -59,31 +65,6 @@ theme = "hugo-elate-theme"
   [params.navigation]
     brand = ""
     logo = "/images/gwella-logo.png"
-    home = "Home"
-    claratti-cloud = "#"
-    lms = "#"
-    appointment = "#"
-    projectisago = "#"
-    #work = "Work"
-    #testimonials = "Testimonials"
-    #services = "Services"
-    #about = "About"
-    contact = "Contact"
-
-    # You can add custom links before or after the default links
-    # Assign a weight to define the order
-    
-    # prepended links
-    #[[menu.prepend]]
-      #url = "http://gohugo.io"
-      #name = "Hugo"
-      #weight = 10
-
-    # postpended links
-    #[[menu.postpend]]
-    #  url = "http://gohugo.io"
-    #  name = "External link"
-    #  weight = 10
   
   # Hero section
   [params.hero]

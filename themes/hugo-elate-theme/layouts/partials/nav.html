@@ -1,22 +1,22 @@
-    <header role="banner" id="fh5co-header">
+    <header role="banner" id="fh5co-header" class='{{ if eq .Type "external" }} nav-fix-top  {{ end }}' >
         <div class="container">
             <!-- <div class="row"> -->
             <nav class="navbar navbar-default">
                 <div class="navbar-header">
                     <!-- Mobile Toggle Menu Button -->
-                    <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+                    <a href="/" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
                     <a class="navbar-brand" href="index.html">{{if .Site.Params.navigation.brand }} {{ with .Site.Params.navigation.brand }}{{ . | markdownify }}{{ end }} {{ else }} <img src="{{ with .Site.Params.navigation.logo }}{{ . | markdownify }}{{ end }}" alt="logo" class="img-responsive"> {{end}}</a> 
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                   <ul class="nav navbar-nav navbar-right">
 
                     {{ range .Site.Menus.prepend }}
-                        <li><a class="external" href="{{ .URL }}"><span>{{ .Name | markdownify }}</span></a></li>
+                        <li><a class="external" href="{{ .URL }}"><span>{{ .Name | markdownify }} </span></a></li>
                     {{ end }}
 					
-					
+					{{ $currentPage := . }}
 					{{ range .Site.Menus.main }}
-						<li><a href="{{ .URL  }}" data-nav-section="{{.Identifier}}"> {{ .Name }}</a> </li>
+						<li><a href="{{ .URL  }}" class="external"> {{ .Name }} {{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}</a> </li>
 								
 					{{end}}
 							

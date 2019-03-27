@@ -1,0 +1,100 @@
+<div class="row">
+	<div class="col-md-8">
+		<h2>Contact us for</h2>
+		<ul><li>Project is a GO! Platform Inquiry</li><li>Gwella Professional Consulting Services &amp; Rates<ul><li>Project Management</li><li>Business Info Systems</li><li>Business Analysis</li></ul></li><li>Learning Management Systems (TalentLMS)&nbsp;</li><li>Claratti Cloud Solutions</li></ul>
+		<p>Use the form below to tell us about your inquiry, and we’ll contact you back on your preferred method.  You may also email or call us to make an appointment. Our general response time is one business day.</p>
+		
+		
+				<div class="contact-form">
+					<form method="post" action="//formspree.io/{{ with .Site.Params.email }}{{.}}{{ end }}">
+					<div class="form-group ">
+						{{ with .Params.contact.form.fName }}
+						<label for="fName" class="sr-only">{{ . | markdownify }}</label>
+						<input id="fname" class="form-control" name="fName" placeholder="{{ . }}" type="text">
+						{{ end }}
+					</div>
+					<div class="form-group ">
+						{{ with .Params.contact.form.lName }}
+						<label for="lName" class="sr-only">{{ . | markdownify }}</label>
+						<input id="lname" class="form-control" name="lName" placeholder="{{ . }}" type="text">
+						{{ end }}
+					</div>
+					<div class="form-group ">
+						{{ with .Params.contact.form.email }}
+						<label for="email" class="sr-only">{{ . | markdownify }}</label>
+						<input id="email" class="form-control" name="_replyto" placeholder="{{ . }}" type="email">
+						{{ end }}
+					</div>
+					<div class="form-group ">
+						{{ with .Params.contact.form.phone }}
+						<label for="phone" class="sr-only">{{ . | markdownify }}</label>
+						<input id="phone" class="form-control" name="phone" placeholder="{{ . }}" type="text">
+						{{ end }}
+					</div>
+					<div class="form-group ">						
+						<label class="bold">Area of Inquiry *</label>
+						{{ range $index, $element := .Params.contact.form.inquiry }} 
+						<!-- Checkboxes -->
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox" id="inquiry{{ $index }}"  value="{{ $element }}" name="{{ $element }}">
+								<label  for="inquiry{{ $index }}" class="form-check-label">{{ $element }}</label>
+							</div>
+						{{end}}
+					</div>
+					<div class="form-group ">
+						<label class="bold">How Can We Help?*</label>
+						<small>Please do not include confidential or sensitive information in your message. In the event that we are representing a party with opposing interests to your own, we may have a duty to disclose any information you provide to our client.</small>
+						{{ with .Params.contact.form.help }}
+						<label for="help" class="sr-only">{{ . | markdownify }}</label>
+						<textarea id="help" cols="30" rows="5" class="form-control" name="help" placeholder="{{ . }}"></textarea>
+						{{ end }}
+					</div>					
+					<div class="form-group ">						
+						<label >Preferred Contact Method *</label>
+						{{ range $index, $element := .Params.contact.form.preferred }} 
+						<!-- Checkboxes -->
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" id="preferred{{ $index }}"  value="{{ $element }}" name="Preferred">
+								<label  for="preferred{{ $index }}" class="form-check-label">{{ $element }}</label>
+							</div>
+						{{end}}
+					</div>
+					
+					<div class="form-group ">
+						<input class="btn btn-primary btn-lg" value="{{ .Site.Params.contact.button | markdownify }}" type="submit">
+					</div>
+					</form>
+				</div>
+				
+		
+		
+	</div>
+	<div class="col-md-4">
+		<div class="right-cont">
+			<h4><i class="icon-location-pin"></i> LOCATION</h4>
+			<ul>
+			{{ range .Params.contact.location }}
+				<li>{{.}}</li>
+			{{end}}
+			</ul>
+		</div>
+		
+		<div class="right-cont">
+			<h4><i class="icon-clock"></i> OFFICE HOURS</h4>
+			<ul>
+				{{ range .Params.contact.hours }}
+					<li>{{.}}</li>
+				{{end}}
+			</ul>
+		</div>
+		
+		<div class="right-cont">
+			<h4><i class="icon-phone"></i> CONTACT</h4>
+			<ul>
+				{{ range .Params.contact.contact }}
+					<li><a href="mailto:{{.email}}">{{.email}}</a> <br> <a href="tel:{{.tel}}">{{.tel}}</a></li>
+				{{end}}
+			</ul>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <head>
+        {{ partial "head.html" .}}
+    </head>
+    <body>
+        {{ partial "nav.html" .}}
+		
+		{{ partial "hero.html" .}}
+		
+  <section  class="sec-pt100">
+    <div class="container">
+        <div class="row row-bottom-padded-md">
+          <div class="col-md-12">
+			{{ with .Params.pageInfo }}{{ . | markdownify }}{{ end }} 
+			
+			{{ if .Params.solution.enable }}
+				{{ partial "box-solution.html" .}}
+			{{ end }}
+			
+			{{ if .Params.appointment.enable }}
+				{{ partial "appointment.html" .}}
+			{{ end }}
+			
+			{{ if .Params.projectGo.enable }}
+				{{ partial "projectGo.html" .}}
+			{{ end }}
+			{{ if .Params.contact.enable }}
+				{{ partial "contactpage.html" .}}
+			{{ end }}
+			
+			
+			
+            {{ .Content }}
+			
+			
+			
+			
+          </div>
+        </div>
+    </section>
+	
+
+
+        {{ if .Site.Params.footer.enable }}
+        	{{ partial "footer.html" .}}
+        {{ end }}
+
+        {{ partial "js.html" .}}
+    </body>
+</html>

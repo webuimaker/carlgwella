@@ -143,4 +143,37 @@
 }
 
 
+#fh5co-header.navbar-fixed-top , #fh5co-header.nav-fix-top{
+  position: fixed !important;
+  background: #fff;
+  -webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.1);
+  margin-top: 0px;
+  top: 0;
+}
+#fh5co-header.nav-fix-top #navbar li a{
+	color: rgba(0, 0, 0, 0.5);
+    background: transparent;
+}
+.sec-pt100{padding-top:100px;}
+.external-banner, .external-banner .text-wrap{height:500px !important;}
+.centerMid{
+	align-items: center;
+    justify-content: center;
+	flex-direction:column;
+}
+.contact-form label{
+	font-weight:300;	
+}
+.contact-form label.bold{
+	font-weight:500;	
+}
+.contact-form small{
+	display:block;
+	line-height: 1.2em;
+    margin-bottom: 20px;
+}
+.right-cont h4{margin-bottom:10px;}
 
