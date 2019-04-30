@@ -11,7 +11,7 @@ theme = "hugo-elate-theme"
   # Meta
   author = ""
   description = ""
-  email = "webuimaker@gmail.com"
+  email = "carl@gwella.com.au"
 
   # Google Maps Javascript API Key (if not set will default to not passing a key)
   googleMapsApiKey = ""
